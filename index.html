@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buckies Construction & Home Renovations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chat-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .chat-scrollbar::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 10px;
+        }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+      }
+    }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Top Header Contact Bar -->
+    <div class="bg-amber-600 text-white py-2 px-4 md:px-12 flex flex-wrap justify-between items-center text-xs md:text-sm font-medium">
+        <div class="flex items-center space-x-6">
+            <a href="tel:(832) 887-2946" class="hover:underline flex items-center">
+                <i class="fas fa-phone-alt mr-2"></i> (832) 887-2946
+            </a>
+            <a href="mailto:buckieshome53@gmail.com" class="hidden md:flex hover:underline items-center">
+                <i class="fas fa-envelope mr-2"></i> buckieshome53@gmail.com
+            </a>
+        </div>
+        <div class="hidden sm:block">
+            Serving Houston & Surrounding Areas • Zip: 77571
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <nav class="max-w-7xl mx-auto px-4 md:px-12 h-20 flex justify-between items-center">
+            <div class="flex flex-col">
+                <h1 class="text-xl md:text-2xl font-bold tracking-tight text-gray-900 uppercase">
+                    Buckies <span class="text-amber-600">Construction</span>
+                </h1>
+                <span class="text-[10px] md:text-xs text-gray-500 font-semibold tracking-[0.2em] uppercase">Home Renovations Done Right</span>
+            </div>
+            
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="text-sm font-bold uppercase text-amber-600 border-b-2 border-amber-600 transition-colors">Home</a></li>
+                <li><a href="#services" class="text-sm font-bold uppercase text-gray-600 hover:text-amber-600 transition-colors">Services</a></li>
+                <li><a href="#gallery" class="text-sm font-bold uppercase text-gray-600 hover:text-amber-600 transition-colors">Gallery</a></li>
+                <li><a href="#areas" class="text-sm font-bold uppercase text-gray-600 hover:text-amber-600 transition-colors">Areas</a></li>
+                <li><a href="#contact" class="text-sm font-bold uppercase text-gray-600 hover:text-amber-600 transition-colors">Contact</a></li>
+            </ul>
+
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative h-[600px] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://picsum.photos/id/122/1600/900" alt="Beautiful Renovation" class="w-full h-full object-cover filter brightness-[0.4]" />
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-12 text-white">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight max-w-2xl">
+                    Excellence in Every <span class="text-amber-500 underline decoration-amber-500 underline-offset-8">Square Foot.</span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-xl">
+                    Professional home renovations and construction services tailored to your vision. From kitchens to flooring, we bring quality craftsmanship to your doorstep.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-md font-bold text-sm uppercase transition-all shadow-xl">Get a Free Estimate</a>
+                    <a href="#services" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-md font-bold text-sm uppercase transition-all">Our Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="bg-gray-900 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold text-amber-500 mb-2">15+</div>
+                    <div class="text-xs uppercase font-bold tracking-widest text-gray-400">Years Exp</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-amber-500 mb-2">500+</div>
+                    <div class="text-xs uppercase font-bold tracking-widest text-gray-400">Projects Done</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-amber-500 mb-2">100%</div>
+                    <div class="text-xs uppercase font-bold tracking-widest text-gray-400">Satisfied</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-amber-500 mb-2">10</div>
+                    <div class="text-xs uppercase font-bold tracking-widest text-gray-400">Service Cities</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 md:px-12">
+                <div class="text-center mb-16">
+                    <h2 class="text-sm font-bold text-amber-600 uppercase tracking-[0.3em] mb-4">What We Do</h2>
+                    <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900">Expert Renovation Services</h3>
+                    <div class="w-20 h-1 bg-amber-600 mx-auto mt-6"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="group bg-gray-50 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                        <div class="h-52 overflow-hidden relative">
+                            <img src="https://picsum.photos/id/42/800/600" alt="Kitchen Remodeling" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div class="p-8">
+                            <div class="w-12 h-12 bg-amber-600/10 text-amber-600 flex items-center justify-center rounded-lg mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-utensils text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3 text-gray-900">Kitchen Remodeling</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6">Transform your kitchen into a modern culinary haven with high-end finishes and functional layouts.</p>
+                            <a href="#contact" class="text-amber-600 font-bold text-xs uppercase tracking-widest hover:text-amber-800 flex items-center">
+                                Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="group bg-gray-50 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                        <div class="h-52 overflow-hidden relative">
+                            <img src="https://picsum.photos/id/101/800/600" alt="Bathroom Renovation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div class="p-8">
+                            <div class="w-12 h-12 bg-amber-600/10 text-amber-600 flex items-center justify-center rounded-lg mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-bath text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3 text-gray-900">Bathroom Renovation</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6">Create a spa-like retreat with custom tiling, modern fixtures, and luxury flooring.</p>
+                            <a href="#contact" class="text-amber-600 font-bold text-xs uppercase tracking-widest hover:text-amber-800 flex items-center">
+                                Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- More cards would go here following the same template -->
+                    <div class="group bg-gray-50 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                        <div class="h-52 overflow-hidden relative">
+                            <img src="https://picsum.photos/id/105/800/600" alt="Flooring" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        </div>
+                        <div class="p-8">
+                            <div class="w-12 h-12 bg-amber-600/10 text-amber-600 flex items-center justify-center rounded-lg mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-layer-group text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3 text-gray-900">Flooring Installation</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6">Expert installation of hardwood, tile, laminate, and vinyl to elevate every room in your home.</p>
+                            <a href="#contact" class="text-amber-600 font-bold text-xs uppercase tracking-widest hover:text-amber-800 flex items-center">
+                                Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section id="gallery" class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 md:px-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div>
+                        <h2 class="text-sm font-bold text-amber-600 uppercase tracking-[0.3em] mb-4">Portfolio</h2>
+                        <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900">Our Recent Work</h3>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="relative aspect-[4/3] group overflow-hidden rounded-xl">
+                        <img src="https://picsum.photos/id/164/800/600" alt="Gallery 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+                            <span class="text-amber-400 text-[10px] font-bold uppercase tracking-widest mb-1">Kitchen</span>
+                            <h4 class="text-white font-bold text-lg">Modern Chef Kitchen</h4>
+                        </div>
+                    </div>
+                    <div class="relative aspect-[4/3] group overflow-hidden rounded-xl">
+                        <img src="https://picsum.photos/id/166/800/600" alt="Gallery 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+                            <span class="text-amber-400 text-[10px] font-bold uppercase tracking-widest mb-1">Bathroom</span>
+                            <h4 class="text-white font-bold text-lg">Minimalist Bath</h4>
+                        </div>
+                    </div>
+                    <div class="relative aspect-[4/3] group overflow-hidden rounded-xl">
+                        <img src="https://picsum.photos/id/192/800/600" alt="Gallery 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+                            <span class="text-amber-400 text-[10px] font-bold uppercase tracking-widest mb-1">Flooring</span>
+                            <h4 class="text-white font-bold text-lg">Hardwood Elegance</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Areas -->
+        <section id="areas" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-sm font-bold text-amber-600 uppercase tracking-[0.3em] mb-4">Where We Operate</h2>
+                        <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8">Serving the Greater Houston Area</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            Buckies Construction is proud to bring top-tier home renovation services to neighborhoods across Southeast Texas. We understand the local market and deliver quality that lasts in our Texas climate.
+                        </p>
+                        <div class="grid grid-cols-2 gap-y-4">
+                            <div class="flex items-center text-gray-700 font-medium"><div class="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>La Porte, TX</div>
+                            <div class="flex items-center text-gray-700 font-medium"><div class="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>League City, TX</div>
+                            <div class="flex items-center text-gray-700 font-medium"><div class="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>Pearland, TX</div>
+                            <div class="flex items-center text-gray-700 font-medium"><div class="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>Friendswood, TX</div>
+                            <div class="flex items-center text-gray-700 font-medium"><div class="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>Houston, TX</div>
+                            <div class="flex items-center text-gray-700 font-medium"><div class="w-2 h-2 bg-amber-600 rounded-full mr-3"></div>Katy, TX</div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-3xl p-8 shadow-inner text-center">
+                        <div class="bg-white p-6 rounded-2xl shadow-xl inline-block mx-auto">
+                            <h4 class="font-bold text-lg text-gray-900">Service Zip Code</h4>
+                            <p class="text-amber-600 text-3xl font-black">77571</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-24 bg-gray-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 md:px-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div>
+                        <h2 class="text-sm font-bold text-amber-500 uppercase tracking-[0.3em] mb-4">Get In Touch</h2>
+                        <h3 class="text-4xl font-extrabold mb-8">Ready to start your dream renovation?</h3>
+                        <div class="space-y-8 mt-12">
+                            <div class="flex items-start space-x-6">
+                                <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-amber-500 shrink-0"><i class="fas fa-phone-alt"></i></div>
+                                <div><p class="text-xl font-bold">(832) 887-2946</p></div>
+                            </div>
+                            <div class="flex items-start space-x-6">
+                                <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-amber-500 shrink-0"><i class="fas fa-envelope"></i></div>
+                                <div><p class="text-xl font-bold">buckieshome53@gmail.com</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 md:p-12 text-gray-900">
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <input type="text" placeholder="Full Name" required class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500" />
+                                <input type="tel" placeholder="Phone" required class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500" />
+                            </div>
+                            <input type="email" placeholder="Email" required class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500" />
+                            <textarea placeholder="Tell us about your project..." rows="4" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:ring-2 focus:ring-amber-500"></textarea>
+                            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded-lg uppercase tracking-widest transition-all">Request Free Estimate</button>
+                        </form>
+                        <div id="form-success" class="hidden text-center py-8">
+                            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"><i class="fas fa-check"></i></div>
+                            <h4 class="text-xl font-bold">Message Sent!</h4>
+                            <p class="text-gray-500 mt-2">We will contact you within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 md:px-12 text-center">
+            <h2 class="text-2xl font-bold mb-4">Buckies <span className="text-amber-500">Construction</span></h2>
+            <p class="text-gray-500 max-w-md mx-auto mb-8">Home Renovations Done Right. Quality craftsmanship you can trust.</p>
+            <p class="text-xs text-gray-600">© 2024 Buckies Construction. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AI Consultant Widget -->
+    <div id="ai-widget" class="fixed bottom-6 right-6 z-50">
+        <button id="chat-toggle" class="bg-amber-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-amber-700 hover:scale-110 transition-transform">
+            <i class="fas fa-comment-dots text-2xl"></i>
+        </button>
+        
+        <div id="chat-window" class="hidden bg-white rounded-2xl shadow-2xl w-80 md:w-96 flex flex-col overflow-hidden border border-gray-200 h-[500px] absolute bottom-20 right-0">
+            <div class="bg-amber-600 p-4 text-white flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-robot text-xl"></i>
+                    <span class="font-bold">Project Consultant</span>
+                </div>
+                <button id="close-chat" class="text-white hover:text-amber-200"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 chat-scrollbar">
+                <div class="flex justify-start">
+                    <div class="max-w-[85%] p-3 rounded-2xl text-sm bg-gray-100 text-gray-800 rounded-tl-none">
+                        Hi! I'm your AI consultant for Buckies Construction. Thinking of a home project? Ask me about renovations, materials, or the process!
+                    </div>
+                </div>
+            </div>
+            <div class="p-4 border-t border-gray-100 flex space-x-2">
+                <input id="chat-input" type="text" placeholder="Ask about your project..." class="flex-1 border border-gray-200 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                <button id="send-chat" class="bg-amber-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-amber-700 transition">
+                    <i class="fas fa-paper-plane text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logic -->
+    <script type="module">
+        import { GoogleGenAI } from "@google/genai";
+
+        // DOM elements
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatWindow = document.getElementById('chat-window');
+        const closeChat = document.getElementById('close-chat');
+        const chatInput = document.getElementById('chat-input');
+        const sendChat = document.getElementById('send-chat');
+        const chatMessages = document.getElementById('chat-messages');
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+
+        let chatSession = null;
+        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const systemInstruction = `You are a helpful, professional AI consultant for Buckies Construction. 
+        The company provides home renovations, including kitchen/bath remodeling, flooring, painting, decks, and more.
+        Service areas: La Porte, League City, Pearland, Friendswood, Webster, Sugar Land, Pasadena, Houston, Humble, Katy.
+        Contact: (832) 887-2946.
+        Your goal is to answer questions about home renovation projects and encourage users to contact the team for a quote.
+        Be polite, informative, and encouraging.`;
+
+        // Toggle Chat
+        chatToggle.addEventListener('click', () => {
+            chatWindow.classList.toggle('hidden');
+            if (!chatSession) {
+                chatSession = ai.chats.create({
+                    model: 'gemini-3-flash-preview',
+                    config: { systemInstruction, temperature: 0.7 }
+                });
+            }
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatWindow.classList.add('hidden');
+        });
+
+        // Chat Message Handling
+        async function handleSendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            // Add user message
+            appendMessage('user', text);
+            chatInput.value = '';
+
+            // Loading state
+            const loadingId = 'loading-' + Date.now();
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = loadingId;
+            loadingDiv.className = 'flex justify-start';
+            loadingDiv.innerHTML = `<div class="bg-gray-100 p-3 rounded-2xl rounded-tl-none text-sm text-gray-400"><i class="fas fa-circle-notch fa-spin mr-2"></i> Thinking...</div>`;
+            chatMessages.appendChild(loadingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            try {
+                const result = await chatSession.sendMessage({ message: text });
+                document.getElementById(loadingId).remove();
+                appendMessage('model', result.text);
+            } catch (error) {
+                document.getElementById(loadingId).remove();
+                appendMessage('model', "I'm sorry, I'm having trouble connecting. Please try again or call us at (832) 887-2946.");
+            }
+        }
+
+        function appendMessage(role, text) {
+            const div = document.createElement('div');
+            div.className = `flex ${role === 'user' ? 'justify-end' : 'justify-start'}`;
+            div.innerHTML = `
+                <div class="max-w-[85%] p-3 rounded-2xl text-sm ${
+                    role === 'user' 
+                    ? 'bg-amber-600 text-white rounded-tr-none' 
+                    : 'bg-gray-100 text-gray-800 rounded-tl-none'
+                }">${text}</div>
+            `;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        sendChat.addEventListener('click', handleSendMessage);
+        chatInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') handleSendMessage();
+        });
+
+        // Contact Form
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            contactForm.classList.add('hidden');
+            formSuccess.classList.remove('hidden');
+        });
+
+        // Smooth nav highlight simple logic
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.forEach(l => l.classList.remove('text-amber-600', 'border-b-2', 'border-amber-600'));
+                link.classList.add('text-amber-600', 'border-b-2', 'border-amber-600');
+            });
+        });
+    </script>
+</body>
+</html>

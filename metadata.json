@@ -1,0 +1,7 @@
+{
+  "name": "Buckies Construction & Home Renovations",
+  "description": "A professional construction and home renovation showcase for Buckies Construction, featuring service areas in Texas, a project gallery, and an AI-powered renovation consultant.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
